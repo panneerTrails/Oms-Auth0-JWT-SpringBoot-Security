@@ -1,0 +1,33 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.10.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.oms-auth0.jwt.springboot.security'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile ('org.springframework.boot:spring-boot-autoconfigure:1.5.10.RELEASE')
+	compile('com.auth0:auth0:1.0.0')
+	compile('com.auth0:auth0-spring-security-api:1.0.0-rc.2')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
